@@ -22,5 +22,5 @@ def sort_char_list(character_list):
         if key.isalpha():
             dict_entry = {"char": key, "num": character_list[key]}
             new_char_list.append(dict_entry)
-    new_char_list.sort(reverse=True, key=sort_on)
+    test_list = new_char_list.sort(reverse=True, key=sort_on)
     return new_char_list
