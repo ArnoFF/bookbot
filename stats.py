@@ -1,6 +1,6 @@
 def get_num_words(text):
     words = text.split()
-    print(f"{len(words)} words found in the document")
+    print(f"Found {len(words)} total words")
 
 
 def get_num_characters(text):
@@ -12,11 +12,15 @@ def get_num_characters(text):
         else:
             characters[letter] = 1
     return characters
-    
+
+def sort_on(items):
+    return items["num"]
+
 def sort_char_list(character_list):
     new_char_list = []
     for key in character_list:
-        dict_entry = {"char": key, "num": character_list[key]}
-        new_char_list.append(dict_entry)
-    new_char_list.sort()
-    print(new_char_list)
+        if key.isalpha():
+            dict_entry = {"char": key, "num": character_list[key]}
+            new_char_list.append(dict_entry)
+    new_char_list.sort(reverse=True, key=sort_on)
+    return new_char_list

@@ -9,10 +9,11 @@ def main():
     print(f"============ BOOKBOT ============ \n Analyzing book found at {path}...")
     print("----------- Word Count ----------")
     get_num_words(get_book_text(path))
-    
-    characters = get_num_characters(get_book_text(path))
-    for key in characters:
-        print(f"'{key}': {characters[key]}")
+    print("--------- Character Count -------")
+    char_dict = get_num_characters(get_book_text(path))
+    char_list = sort_char_list(char_dict)
+    for character in char_list:
+        print(f"{character["char"]}: {character["num"]}")
     
 
     
